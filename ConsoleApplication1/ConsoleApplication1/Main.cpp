@@ -5,7 +5,8 @@ using namespace std;
 
 int main()
 {
-	Encoder::EncodeFromFile("Sayilar.txt");
+	// Initialize Encode process
+	Encoder encoder("Sayilar.txt");
 
 	system("pause");
 }
