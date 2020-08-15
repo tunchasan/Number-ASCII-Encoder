@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <vector> 
 #include <fstream>
 
 #include "ListManager.h"
@@ -18,7 +19,13 @@ public:
 
 private:
 
-	void EncodeProcessHandler(string);
+	void encodeProcessHandler(string);
+
+	// Converts content to int array
+	int *contentConverter(string);
+
+	// Returns word count
+	int getWordCount(string);
 };
 
 #endif
