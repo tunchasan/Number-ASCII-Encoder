@@ -14,7 +14,49 @@ void ListManager::addFirstElemToList(int value)
 
 void ListManager::addElemToLeft(int value, int iterationCount, Node* from)
 {
-	// TODO
+	int counter = 0;
+
+	Node* travelar = from;
+
+	while (counter != iterationCount) {
+
+		if (travelar == root) {
+
+			// Create new node
+			Node* newNode = new Node(value);
+
+			Node* tempNode = root;
+
+			newNode->prev = tempNode->prev;
+
+			tempNode->prev->next = newNode;
+
+			newNode->next = tempNode;
+
+			tempNode->prev = newNode;
+
+			root = newNode;
+
+			return;
+		}
+
+		travelar = travelar->prev;
+
+		counter++;
+	}
+
+	// Create new node
+	Node* newNode = new Node(value);
+
+	Node* tempNode = travelar->next;
+
+	travelar->next = newNode;
+
+	newNode->prev = travelar;
+
+	newNode->next = tempNode;
+
+	tempNode->prev = newNode;
 }
 
 void ListManager::addElemToRight(int value, Node* from)
