@@ -155,11 +155,13 @@
     <ClCompile Include="Encoder.cpp" />
     <ClCompile Include="ListManager.cpp" />
     <ClCompile Include="Math.cpp" />
+    <ClCompile Include="Node.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Encoder.h" />
     <ClInclude Include="ListManager.h" />
     <ClInclude Include="Math.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
