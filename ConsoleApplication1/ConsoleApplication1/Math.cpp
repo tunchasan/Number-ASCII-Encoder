@@ -1,6 +1,6 @@
 #include "Math.h"
 
-int Math::obebCalculater(int n1, int n2)
+int Math::OBEB(int n1, int n2)
 {
 	static int greaterNumber;
 
@@ -16,4 +16,11 @@ int Math::obebCalculater(int n1, int n2)
 			return greaterNumber; // Returns the obeb for given numbers
 		}
 	}
+
+	return -1;
+}
+
+int Math::MOD(int n1, int n2)
+{
+	return n1 % n2; // Returns mod for given numbers
 }

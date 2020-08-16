@@ -5,8 +5,11 @@ struct Math {
 
 public:
 
-	// Calculates obeb
-	static int obebCalculater(int, int);
+	// Obeb Operation
+	static int OBEB(int, int);
+
+	// Modulo Operation
+	static int MOD(int, int);
 };
 
 #endif

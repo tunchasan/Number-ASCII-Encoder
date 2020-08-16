@@ -24,6 +24,9 @@
     <ClCompile Include="Main.cpp">
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Kaynak Dosyalar</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Encoder.h">
@@ -33,6 +36,9 @@
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
     <ClInclude Include="ListManager.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
   </ItemGroup>

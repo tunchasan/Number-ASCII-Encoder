@@ -22,9 +22,36 @@ void Encoder::encodeProcessHandler(string line)
 	// Pass value to ContentConverter
 	int *content = contentConverter(line);
 
+	// Stores encode obeb value
+	int obebResult = -1;
+
 	for (int i = 0; i <= getWordCount(line); i++) {
-		cout << content[i] << endl;
+		//cout << content[i] << endl;
+
+		// Create linked list based on the encode rules
+		if (obebResult == -1) {
+
+			obebResult = 0;
+			
+			// Add first element to list
+			// TODO
+		}
+
+		else {
+			
+			// Traverse and calculate Obeb for each element on the list
+			// TODO
+
+			// if calculatedObeb >= obebResult
+			// TODO
+
+			// if calculatedObeb = 0
+			// TODO
+		}
 	}
+
+	// Deallacote the array right after encode process
+	// TODO
 }
 
 // Convert given content into words
@@ -73,5 +100,3 @@ int Encoder::getWordCount(string content)
 
 	return counter;
 }
-
-

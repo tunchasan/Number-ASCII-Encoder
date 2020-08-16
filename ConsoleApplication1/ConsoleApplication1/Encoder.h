@@ -7,6 +7,7 @@
 #include <fstream>
 
 #include "ListManager.h"
+#include "Math.h"
 
 using namespace std;
 
