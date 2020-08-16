@@ -30,6 +30,9 @@ public:
 
 	// Constructor
 	ListManager();
+
+	// Frees the allocated memory field
+	void dellactionOnList();
 };
 
 #endif

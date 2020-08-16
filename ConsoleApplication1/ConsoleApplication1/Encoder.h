@@ -28,7 +28,7 @@ private:
 	int getWordCount(string);
 
 	// Prints encoded content
-	void asciiConverter(Node*);
+	void asciiConverter(Node*, ListManager*);
 };
 
 #endif

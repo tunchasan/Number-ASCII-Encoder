@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	// Initialize Encode process
-	Encoder encoder("Sayilar.txt");
+    Encoder encoder("Sayilar.txt");
 
 	system("pause");
 }

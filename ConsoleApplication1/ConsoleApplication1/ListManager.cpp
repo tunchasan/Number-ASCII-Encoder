@@ -101,3 +101,21 @@ ListManager::ListManager()
 {
 	root = nullptr;
 }
+
+// Memory deallaction handler
+void ListManager::dellactionOnList()
+{
+	// Deallacote the linked list' elements
+	Node* temp = root;
+
+	while (temp != root) {
+
+		Node* temp2 = temp->next;
+
+		delete temp;
+
+		temp = temp2;
+	}
+
+	delete temp;
+}

@@ -98,15 +98,13 @@ void Encoder::encodeProcessHandler(string line)
 				}
 
 				travelar = travelar->next;
+				
 			}
 		}
 	}
 
 	// Pass processed list to "asciiConverter" for final process of Encoder
-	asciiConverter(manager->getLinkedList());
-
-	// Deallacote the array and manager right after encode process
-	// TODO
+	asciiConverter(manager->getLinkedList(), manager);
 }
 
 // Convert given content into words
@@ -157,7 +155,7 @@ int Encoder::getWordCount(string content)
 }
 
 // Number to Ascii
-void Encoder::asciiConverter(Node* root) {
+void Encoder::asciiConverter(Node* root, ListManager* manager) {
 
 	string encodedText = ""; // The encoded text
 
@@ -179,4 +177,9 @@ void Encoder::asciiConverter(Node* root) {
 	encodedText += toAscii;
 
 	cout << "Password ...: " << encodedText << endl;
+
+	// Memory Deallaction Initializer
+	manager->dellactionOnList();
 }
+
+
