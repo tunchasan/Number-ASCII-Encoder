@@ -179,5 +179,5 @@ void Encoder::asciiConverter(Node *root, ListManager *manager)
 	cout << "Password ...: " << encodedText << endl;
 
 	// Memory Deallaction Initializer
-	manager->dellactionOnList();
+	// manager->dellactionOnList();
 }
