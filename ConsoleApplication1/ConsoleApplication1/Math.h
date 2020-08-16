@@ -10,6 +10,9 @@ public:
 
 	// Modulo Operation
 	static int MOD(int, int);
+
+	// Compare Operation
+	static int MAX(int, int);
 };
 
 #endif
