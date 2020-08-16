@@ -26,6 +26,9 @@ private:
 
 	// Returns word count
 	int getWordCount(string);
+
+	// Prints encoded content
+	void asciiConverter(Node*);
 };
 
 #endif

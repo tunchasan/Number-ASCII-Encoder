@@ -5,6 +5,8 @@ struct Node{
 
 	friend struct ListManager;
 
+	friend struct Encoder;
+
 private:
 
 	Node *next;

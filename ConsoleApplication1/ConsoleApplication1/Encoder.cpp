@@ -25,8 +25,11 @@ void Encoder::encodeProcessHandler(string line)
 	// Stores encode obeb value
 	int obebResult = -1;
 
+	ListManager *manager = new ListManager();
+
 	for (int i = 0; i <= getWordCount(line); i++) {
-		//cout << content[i] << endl;
+
+		int number = content[i];
 
 		// Create linked list based on the encode rules
 		if (obebResult == -1) {
@@ -34,23 +37,75 @@ void Encoder::encodeProcessHandler(string line)
 			obebResult = 0;
 			
 			// Add first element to list
-			// TODO
+			manager->addFirstElemToList(number);
 		}
 
 		else {
-			
-			// Traverse and calculate Obeb for each element on the list
-			// TODO
 
-			// if calculatedObeb >= obebResult
-			// TODO
+			Node* travelar = manager->getLinkedList();
 
-			// if calculatedObeb = 0
-			// TODO
+			Node* listRoot = manager->getLinkedList();
+
+			while (true) {
+
+				if (Math::OBEB(travelar->getValue(), number) >= obebResult) {
+					
+					// Update current obeb result
+					obebResult = Math::OBEB(travelar->getValue(), number);
+
+					int modResult = Math::MOD(
+						Math::MAX(number, travelar->getValue()), 
+						Math::MIN(number, travelar->getValue())
+					);
+
+					if (modResult == 0) {
+
+						manager->addElemToRight(number, travelar);
+
+						break;
+					}
+
+					else {
+
+						manager->addElemToLeft(number, modResult, travelar);
+
+						break;
+					}
+					
+				}
+
+				else if (travelar->next == listRoot) {
+
+					int modResult = Math::MOD(
+						Math::MAX(number, travelar->getValue()),
+						Math::MIN(number, travelar->getValue())
+					);
+
+					if (modResult == 0) {
+
+						manager->addElemToRight(number, travelar);
+
+						break;
+					}
+
+					else {
+
+						manager->addElemToLeft(number, modResult, travelar);
+
+						break;
+					}
+					
+				}
+
+				travelar = travelar->next;
+			}
 		}
 	}
 
-	// Deallacote the array right after encode process
+	// Pass processed list to "asciiConverter" for final process of Encoder
+	asciiConverter(manager->getLinkedList());
+
+	// Deallacote the array and manager right after encode process
 	// TODO
 }
 
@@ -99,4 +154,29 @@ int Encoder::getWordCount(string content)
 	}
 
 	return counter;
+}
+
+// Number to Ascii
+void Encoder::asciiConverter(Node* root) {
+
+	string encodedText = ""; // The encoded text
+
+	Node* travelar = root;
+
+	char toAscii;
+
+	while (travelar->next != root) {
+
+		toAscii = travelar->getValue();
+
+		encodedText += toAscii;
+
+		travelar = travelar->next;
+	}
+
+	toAscii = travelar->getValue();
+
+	encodedText += toAscii;
+
+	cout << "Password ...: " << encodedText << endl;
 }

@@ -29,3 +29,8 @@ int Math::MAX(int n1, int n2)
 {
 	return n1 > n2 ? n1 : n2; // Returns greatest number
 }
+
+int Math::MIN(int n1, int n2)
+{
+	return n1 < n2 ? n1 : n2; // Returns smallest number
+}

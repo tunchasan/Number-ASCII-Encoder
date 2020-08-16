@@ -13,6 +13,9 @@ public:
 
 	// Compare Operation
 	static int MAX(int, int);
+
+	// Compare Operation
+	static int MIN(int, int);
 };
 
 #endif
