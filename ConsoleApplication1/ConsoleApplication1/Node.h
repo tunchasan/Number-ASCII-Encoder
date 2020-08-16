@@ -3,7 +3,7 @@
 
 struct Node{
 
-	friend class ListManager;
+	friend struct ListManager;
 
 private:
 
